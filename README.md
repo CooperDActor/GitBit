@@ -1,4 +1,4 @@
-#gitbit
+GitBit Install
 
 ```
 sudo apt install git 
