@@ -1,12 +1,26 @@
 #!/bin/bash
 cd
+sudo apt install --install-suggests curl python3 python3-dev python3-pip software-properties-common openjdk-8-jdk openjdk-8-jre autoconf builddep cmake wget git net-tools htop screen qemu tshark vim sngrep apache2 docker.io fonts-agave python3 php-common libapache2-mod-php php-cli php-mysql php-curl moreutils docker-compose build-essential bzip2 hwinfo snapd linux-headers coreutils nano iftop htop zip unzip tree tar -y
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt update -y
+sudo apt upgrade -y
+docker run \
+  --name crafty_container \
+  --detach \
+  --restart always \
+  -p 8443:8443 \
+  -p 8123:8123 \
+  -p 19132:19132/udp \
+  -p 25500-25600:25500-25600 \
+  -e TZ=Etc/UTC \
+  -v "/$(pwd)/docker/backups:/crafty/backups" \
+  -v "/$(pwd)/docker/logs:/crafty/logs" \
+  -v "/$(pwd)/docker/servers:/crafty/servers" \
+  -v "/$(pwd)/docker/config:/crafty/app/config" \
+  -v "/$(pwd)/docker/import:/crafty/import" \
+  arcadiatechnology/crafty-4:latest
 
-sudo apt install --install-suggests curl autoconf builddep cmake wget git net-tools htop screen qemu tshark vim sngrep apache2 docker.io fonts-agave python3 php-common libapache2-mod-php php-cli php-mysql php-curl moreutils docker-compose build-essential bzip2 hwinfo snapd linux-headers coreutils nano iftop htop zip unzip tree tar -y
-sudo apt update -y
-sudo apt upgrade -y
-curl https://sh.rustup.rs -sSf | sh
-sudo apt update -y
-sudo apt upgrade -y
 cd
 mkdir cloudflared
 curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && 
@@ -25,6 +39,10 @@ eval "$(homebrew/bin/brew shellenv)"
 brew update --force --quiet
 
 chmod -R go-w "$(brew --prefix)/share/zsh"
+sudo apt update -y
+sudo apt upgrade -y
+brew install rustup-init
+rustup-init
 sudo apt update -y
 sudo apt upgrade -y
 sudo snap install hello-world
