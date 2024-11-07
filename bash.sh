@@ -47,10 +47,7 @@ sudo apt upgrade -y
 sudo apt full-upgrade -y
 sudo snap install rocketchat-server
 
-cd /tmp
-wget https://github.com/FreePBX/sng_freepbx_debian_install/raw/master/sng_freepbx_debian_install.sh  -O /tmp/sng_freepbx_debian_install.sh
-bash /tmp/sng_freepbx_debian_install.sh\ 
-cd
+
 
 curl -s https://packagecloud.io/install/repositories/pufferpanel/pufferpanel/script.deb.sh | sudo bash
 sudo apt-get install pufferpanel
