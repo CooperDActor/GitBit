@@ -1,6 +1,6 @@
 #!/bin/bash
 cd
-sudo apt install --install-suggests curl python3 python3-dev python3-pip software-properties-common openjdk-8-jdk openjdk-8-jre autoconf builddep cmake wget git net-tools htop screen qemu tshark vim sngrep apache2 docker.io fonts-agave python3 php-common libapache2-mod-php php-cli php-mysql php-curl moreutils docker-compose build-essential bzip2 hwinfo snapd linux-headers coreutils nano iftop htop zip unzip tree tar -y
+sudo apt install --install-suggests curl python3 python3-dev python3-pip software-properties-common  autoconf  cmake wget git net-tools htop screen  tshark vim sngrep apache2 docker.io fonts-agave python3 php-common libapache2-mod-php php-cli php-mysql php-curl moreutils docker-compose build-essential bzip2 hwinfo snapd  coreutils nano iftop htop zip unzip tree tar -y
 sudo apt update -y
 sudo apt upgrade -y
 sudo apt update -y
