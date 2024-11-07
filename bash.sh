@@ -5,7 +5,7 @@ sudo apt update -y
 sudo apt upgrade -y
 sudo apt update -y
 sudo apt upgrade -y
-docker run \
+sudo docker run \
   --name crafty_container \
   --detach \
   --restart always \
@@ -23,6 +23,7 @@ docker run \
 
 cd
 mkdir cloudflared
+cd cloudflared
 curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && 
 
 sudo dpkg -i cloudflared.deb
@@ -50,12 +51,14 @@ sudo snap install multipass
 sudo apt update -y
 sudo apt upgrade -y
 cd
+
 cd /tmp
 curl -O https://kasm-static-content.s3.amazonaws.com/kasm_release_1.15.0.06fdc8.tar.gz
 tar -xf kasm_release_1.15.0.06fdc8.tar.gz
 sudo bash kasm_release/install.sh
 sudo apt update -y
 sudo apt upgrade -y
+
 cd 
 git clone https://github.com/CooperDActor/peppermint.git
 cd peppermint 
@@ -69,8 +72,9 @@ sudo apt full-upgrade -y
 
 cd /tmp
 wget https://github.com/FreePBX/sng_freepbx_debian_install/raw/master/sng_freepbx_debian_install.sh  -O /tmp/sng_freepbx_debian_install.sh
-bash /tmp/sng_freepbx_debian_install.sh\ --dahdi
+bash /tmp/sng_freepbx_debian_install.sh\ 
 cd
+
 wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.6.1+2.6.1.tar.gz
 tar xvfz dahdi-linux-complete-2.5.0.1+2.5.0.1.tar.gz
 cd dahdi-linux-complete-2.5.0.1
