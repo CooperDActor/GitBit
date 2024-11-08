@@ -13,6 +13,7 @@ curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/relea
 sudo dpkg -i cloudflared.deb
 sudo apt update -y
 sudo apt upgrade -y
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 
 cd
@@ -27,7 +28,6 @@ sudo snap install hello-world
 sudo apt update -y
 sudo apt upgrade -y
 cd
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 #cd /tmp
 #curl -O https://kasm-static-content.s3.amazonaws.com/kasm_release_1.15.0.06fdc8.tar.gz
 #tar -xf kasm_release_1.15.0.06fdc8.tar.gz
@@ -46,7 +46,7 @@ sudo apt update -y
 sudo apt upgrade -y
 sudo apt full-upgrade -y
 sudo snap install rocketchat-server
-
+curl -fsSL https://get.casaos.io | sudo bash
 
 
 curl -s https://packagecloud.io/install/repositories/pufferpanel/pufferpanel/script.deb.sh | sudo bash
