@@ -5,13 +5,12 @@ sudo apt install git
 ```
 
 ```
-git clone https://github.com/cooperdactor/gitbit
+
+curl -s https://packagecloud.io/install/repositories/pufferpanel/pufferpanel/script.deb.sh | sudo bash
+sudo apt-get install pufferpanel
+
+sudo apt update -y
+sudo apt upgrade -y
+sudo pufferpanel user add
 ```
 
-```
-cd gitbit
-```
-
-```
-sudo bash bash.sh
-```
